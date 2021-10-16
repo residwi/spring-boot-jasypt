@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - openjdk11
+script:
+  - mvn clean test
+cache:
+  directories:
+    - "$HOME/.m2"
+deploy:
+  provider: heroku
+  api_key:
+    secure: XuQ0H6U+VIRSdw5paWEWnIRoqSlM7Bt+A4ddZeDJONEDnDmzzV6aGzOMoz5A6MiDZIALrEDhzGFctCGDHiTSoDTPtfUL9TscEF6AI8Cw1hLSjQ7PWWwEFKQ2nvn1VPZKts8zBw76nZEYzolq5AthgXiGP63tpAYpKRyyj7drdMgnAfgeyuI02cqkiIgpnFCizoANGCyfktKRHrsG7VsVUIF+piBC2s6d0xTvL+rJkLxBF/TjyqAUjUyfxqi1qF1Cx7co4lAO21FAy17YrFeb0pHXH9H7XPr1knTIEbVK8FJgybqfuxYgNXwiLIV6lrDB8HJB9Iyh680+Q1UrcG4mL5+TXaf8jjpnHz2WSp1yo1p/kPRytFm+GxyzQKhR/McBcycQeP5G4rdS5vxX3R86mtnt+T6rFx9wb2DsrXZDQopCa5H+A1/gcoNyk23lN+24SqxW3+ic502e7c/B5lIerZ8OxiJEjLd3hedHb2+ZiSP7bvzy1fAGYkCDGQB+AOFCJ0wEIIOzS7L0IhLdEr4DHy3sqg3GxGqKgknOucv7or7NBTV4VIsIZwlpQgIrgQQ5VxA/AFTO6K2xm1GesdQmqvO058f3W40C8hK8jUas1iYujbE6y5mAlMK0CgGHU7yHEOPjOj9HTArWSBAgQwWCI9qtiaMd6Pu65+yy6TvpUy0=
+  app: spring-boot-jasypt
+  on:
+    repo: residwi/spring-boot-jasypt
+  skip_cleanup: true
